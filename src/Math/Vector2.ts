@@ -53,6 +53,11 @@ class Vector2 {
     this.y = a.y + b.y;
     return this;
   }
+  sub(v) {
+    this.x -= v.x;
+    this.y -= v.y;
+    return this;
+  }
   multiplyScalar(scalar: number) {
     this.x *= scalar;
     this.y *= scalar;
@@ -82,6 +87,19 @@ class Vector2 {
   }
   equals(v): boolean {
     return ((v.x === this.x) && (v.y === this.y));
+  }
+  angle(){
+    // computes the angle in radians with respect to the positive x-axis
+    let angle = Math.atan2( this.y, this.x );
+    if ( angle < 0 ) angle += 2 * Math.PI;
+    return angle;
+  }
+  applyMatrix3(m){
+    const x = this.x,y = this.y;
+    const e = m.elements;
+    this.x = e[0]*x + e[3] * y + e[6];
+    this.y = e[1]*x + e[4] * y + e[7];
+    return this;
   }
   normalize(){
     return this.divideScalar(this.length() || 1);

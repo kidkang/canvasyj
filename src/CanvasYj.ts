@@ -10,8 +10,10 @@ export {LinerRing} from './Geometry/LinerRing';
 export {Layer} from './Layer/Layer';
 //Math
 export {Vector2} from './Math/Vector2';
+export {Matrix3} from './Math/Matrix3';
 
 //Helper
 export {Grid} from './Helper/Grid';
+export {Arrow} from './Helper/Arrow';
 //Control
 export {Scale} from './Controls/Scale';

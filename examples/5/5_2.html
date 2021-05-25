@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>原型-canvasYj</title>
+  
+</head>
+<body>
+<div style="width: 800px;height: 600px;border:1px solid black" id="renderer"></div>
+<script type="text/javascript" src="/dist/canvasyj.js"></script>
+<script type="text/javascript">
+  var layer;
+  var width = 800,height = 600;
+  window.addEventListener("load", init, true);
+  function init() {            
+    var div = document.getElementById("renderer");
+    layer = new CanvasYj.Layer(div);
+    layer.add(new CanvasYj.Grid(20));
+    const arr1 = new CanvasYj.Arrow(new CanvasYj.Vector2(100,100));
+    layer.add(arr1);
+
+    
+
+  }
+
+  function _random(v){
+    return (Math.random() - 0.5) * v;
+  }
+
+
+
+
+</script>
+</body>
+</html>
