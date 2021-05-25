@@ -1,4 +1,4 @@
-import {Point} from '../Geometry/Point';
+import {Vector2} from '../Math/Vector2';
 import {Line} from '../Geometry/Line';
 import {Vector} from '../Vector/Vector';
 class Grid{
@@ -33,8 +33,8 @@ class Grid{
     const vectors = [];
     //竖线
     for(let i = left;i <= right;i += this.size){
-      const p0 = new Point(i,top);
-      const p1 = new Point(i,bottom);
+      const p0 = new Vector2(i,top);
+      const p1 = new Vector2(i,bottom);
       if(i / this.size % 2 === 0 ){
         points.push(p0,p1);
       }else{
@@ -47,8 +47,8 @@ class Grid{
     
     //横线
     for(let i = bottom;i<=top;i += this.size){
-      const p0 = new Point(left,i);
-      const p1 = new Point(right,i);
+      const p0 = new Vector2(left,i);
+      const p1 = new Vector2(right,i);
       if(i / this.size % 2 === 0 ){
         points1.push(p0,p1);
       }else{
@@ -59,8 +59,8 @@ class Grid{
     vectors.push(line1);
 
     //中间线加粗
-    vectors.push(this.getBorderLine(new Point(left,0),new Point(right,0)));
-    vectors.push(this.getBorderLine(new Point(0,bottom),new Point(0,top)));
+    vectors.push(this.getBorderLine(new Vector2(left,0),new Vector2(right,0)));
+    vectors.push(this.getBorderLine(new Vector2(0,bottom),new Vector2(0,top)));
     return vectors;
   }
   getBorderLine(...points){
