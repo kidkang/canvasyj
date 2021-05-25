@@ -30,6 +30,7 @@ class Canvas {
   }
 
   redraw(){
+    this.setSize(this.layer.size);
     this.context.clearRect(0,0,this.layer.size.w,this.layer.size.h);
     if(!this.lock){
       for(let id in this.geometries){

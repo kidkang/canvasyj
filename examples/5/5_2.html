@@ -15,10 +15,16 @@
     var div = document.getElementById("renderer");
     layer = new CanvasYj.Layer(div);
     layer.add(new CanvasYj.Grid(20));
-    const arr1 = new CanvasYj.Arrow(new CanvasYj.Vector2(100,100));
+    var arr1 = new CanvasYj.Arrow(new CanvasYj.Vector2(100,100));
     layer.add(arr1);
 
+    var arr2 = new CanvasYj.Arrow(
+      new CanvasYj.Vector2(100,200),
+      new CanvasYj.Vector2(0,0),
+      'red'
+    );
     
+    layer.add(arr2);
 
   }
 
