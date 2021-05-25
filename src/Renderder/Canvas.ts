@@ -64,6 +64,27 @@ class Canvas {
         break;
     }
   }
+  rendererPath(geometry,renderType){
+    const points = geometry.points;
+    const len = points.length;
+    const context = this.context;
+    const start = this.getLocalXY(points[0]);
+    const {x,y} = start;
+    context.beginPath();
+    if(!isNaN(x) && !isNaN(y)){
+      context.moveTo(x,y);
+      for(let i = 0;i < len;i++){
+        const pt = this.getLocalXY(points[i]);
+        context.lineTo(pt.x,pt.y);
+      }
+      if(renderType.fill){
+        context.fill();
+      }
+      if(renderType.stroke){
+        context.stroke();
+      }
+    }
+  }
   getLocalXY(point){
     const resolution = this.layer.zoom / 100;
     const extent = this.layer.bounds;

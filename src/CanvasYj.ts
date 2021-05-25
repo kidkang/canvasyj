@@ -4,6 +4,7 @@ export {Vector} from './Vector/Vector';
 //Geometry
 export {Point} from './Geometry/Point';
 export {Circle} from './Geometry/Circle';
+export {Line} from './Geometry/Line';
 //Layer
 export {Layer} from './Layer/Layer';
 //Math
