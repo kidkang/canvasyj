@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>原型-canvasYj</title>
+  
+</head>
+<body>
+
+<script type="text/javascript" src="/dist/canvasyj.js"></script>
+<script type="text/javascript">
+var timer,zoom;
+function init(){
+  var div = document.getElementById("renderer");
+  div.innerHTML = '';
+  if(timer) {
+    clearInterval(timer)
+  }
+
+  var layer = new CanvasYj.Layer(div);
+  var vectors = [];
+  var differ = 1;
+  var len = 500;
+  var width = 800,height= 600;
+  for(var i=0;i< len;i++){
+    var point = new CanvasYj.Point(_random(width),_random(height));
+    vectors.push(new CanvasYj.Vector(point));
+  }
+  layer.addVectors(vectors);
+
+  zoom = layer.zoom;
+  center = layer.center;
+  timer = setInterval(function(){
+    zoom += differ;
+    //缩放
+    layer.moveTo(zoom);
+
+    if(zoom > 250){
+      clearInterval(timer);
+      startPan()
+    }
+  },30)
+
+  //平移
+  function startPan(){
+    timer = setInterval(function(){
+      center.x += differ;
+      center.y += differ;
+      if(center.x > layer.maxBounds.right && center.y > layer.maxBounds.top){
+        differ *= -1;
+      }
+      if(center.x < layer.maxBounds.left && center.y < layer.maxBounds.bottom){
+        clearInterval(timer);
+      }
+      layer.moveTo(zoom,center);
+    })
+  }
+  function _random(l){
+    return (Math.random() - 0.5) * l;
+  }
+
+}
+</script>
+<div style="width: 800px;height: 600px;border:1px solid black" id="renderer"></div>
+<button type="button" onclick="init()">运行实例</button>
+</body>
+</html>
