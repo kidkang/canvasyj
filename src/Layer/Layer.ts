@@ -31,6 +31,9 @@ class Layer {
     this.res = 1 / (this.zoom / 100);
     return this.res;
   }
+  getResFromZoom(zoom){
+    return  1 / (zoom / 100);
+  }
   addVectors(vectors:Vector[]){
     this.renderer.lock = true;
     for(let i =0,len = vectors.length;i < len;i++){
@@ -69,6 +72,11 @@ class Layer {
       }
       this.drawVector(this.vectors[id]);
     }
+  }
+  getPositionFromPx(px){
+    const x = (px.x + this.bounds.left / this.res) * this.res;
+    const y = (this.bounds.top / this.res - px.y)  * this.res;
+    return {x,y}
   }
 }
 export {

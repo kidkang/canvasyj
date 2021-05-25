@@ -8,3 +8,6 @@ export {Circle} from './Geometry/Circle';
 export {Layer} from './Layer/Layer';
 //Math
 export {Vector2} from './Math/Vector2';
+
+//Control
+export {Scale} from './Controls/Scale';

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>原型-canvasYj</title>
+  
+</head>
+<body>
+<div style="width: 800px;height: 600px;border:1px solid black" id="renderer"></div>
+<script type="text/javascript" src="/dist/canvasyj.js"></script>
+<script type="text/javascript">
+  var layer;
+  var circleStyle = {fillColor:"blue", fill:true, stroke:true, fillOpacity:1, strokeOpacity:1};
+  var width = 800,height = 600;
+  window.addEventListener("load", init, true);
+
+  function init() {            
+    var div = document.getElementById("renderer");
+    layer = new CanvasYj.Layer(div);
+    var vectors = [];
+    var len = 100;
+    for(let i =0;i<len;i++){
+      var point = new CanvasYj.Point(_random(width),_random(height));
+      vectors.push(new CanvasYj.Vector(point));
+    }
+    layer.addVectors(vectors);
+    new CanvasYj.Scale(layer);
+  }
+
+  function _random(v){
+    return (Math.random() - 0.5) * v;
+  }
+
+
+
+
+</script>
+</body>
+</html>
