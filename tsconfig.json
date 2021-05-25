@@ -1,0 +1,19 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/js",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "declaration": true,
+    "declarationDir": "./dist/types/",
+    "declarationMap": false,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es5",
+    "baseUrl": "./dist/"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "*.test.ts"]
+}

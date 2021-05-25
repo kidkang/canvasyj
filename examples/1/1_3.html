@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>基本形状-canvasYj</title>
+  
+</head>
+<body>
+<div style="width: 800px;height: 600px;border:1px solid black" id="renderer"></div>
+<script type="text/javascript" src="/dist/canvasyj.js"></script>
+<script type="text/javascript">
+  var div = document.getElementById('renderer');
+  var zoom = 100;
+  var layer = new CanvasYj.Layer(div);
+  var vectors = [];
+  var width = 800,height =600;
+  var differ = 1;
+  for(var i =0;i < 100;i++){
+    const point = new CanvasYj.Point(
+      (Math.random() - 0.5) * width,
+      (Math.random() - 0.5) * height
+    );
+    vectors.push(new CanvasYj.Vector(point));
+  }
+  layer.addVectors(vectors);
+
+  timer = setInterval(function(){
+    layer.zoom -= differ;
+    layer.renderer.redraw();
+    if(layer.zoom < 50){
+      differ = -1;
+    }
+
+    if(layer.zoom > 200){
+      differ = 1;
+    }
+  },30)
+  
+</script>
+</body>
+</html>
