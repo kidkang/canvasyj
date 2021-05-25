@@ -45,6 +45,10 @@ class Layer {
     }
     this.vectorsCount += vectors.length;
   }
+  add(vec){
+    //vec.vectors(this);
+    this.addVectors(vec.vectors(this));
+  }
   drawVector(vector){
     let {style} = vector;
     if(!style){

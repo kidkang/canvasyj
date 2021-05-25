@@ -47,15 +47,19 @@ class Canvas {
     throw new Error('Canvas renderder driver['+geometry.geoType+'] not exists!');
   }
 
-  setCanvasStyle(type,style){
+  setCanvasStyle(type,style=null){
+    let color = null;
+    if(style){
+      color = style.color ? style.color : null;
+    }
     switch (type) {
       case "fill":
         this.context.globalAlpha = style.fillOpacity;
-        this.context.fillStyle = style.fillColor;
+        this.context.fillStyle = color ? color : style.fillColor;
         break;
       case 'stroke':
         this.context.globalAlpha = style.strokeOpacity;
-        this.context.strokeStyle = style.strokeColor;
+        this.context.strokeStyle = color ? color : style.strokeColor;
         this.context.lineWidth = style.strokeWidth;
         break;
       default:

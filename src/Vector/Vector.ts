@@ -6,9 +6,11 @@ class Vector {
   id: string;
   attributes?;
   geometry:Geometry;
-  constructor(geometry: Geometry, attributes?) {
+  style = null;
+  constructor(geometry: Geometry,style=null, attributes?) {
     this.id = ('vector_') + (_vectorId += 1);
     this.geometry = geometry;
+    this.style = style;
     if(attributes){
       this.attributes = attributes;
     }

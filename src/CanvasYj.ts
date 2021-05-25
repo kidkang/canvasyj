@@ -11,5 +11,7 @@ export {Layer} from './Layer/Layer';
 //Math
 export {Vector2} from './Math/Vector2';
 
+//Helper
+export {Grid} from './Helper/Grid';
 //Control
 export {Scale} from './Controls/Scale';
