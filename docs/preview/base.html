@@ -1,0 +1,230 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:base</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">向量</h1>
+<h2 id="-">概念</h2>
+<p>既有大小，又有方向的量。向量一般用: $\vec a \quad \vec b \quad  \vec c$来表示；或用有向线段的起点和终点的大写字母来表示，如：$\vec{AB}$</p>
+<ol>
+<li><p><strong>向量的模</strong>
+向量的大小即向量的模（长度），记作:$|\vec{AB}|$</p>
+</li>
+<li><p><strong>单位向量</strong>
+模为1个单位长度的向量。</p>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>平行向量（共线向量）</strong>
+方向相同或者相反的非零向量。任意一组平行向量都可以移动到同一个直线上。</p>
+</li>
+<li><p><strong>相反向量</strong>
+我们把与向量$\vec a$长度相等，方向相反的向量，叫做$\vec a$的相反向量。 记作：$-\vec a$</p>
+</li>
+<li><p><strong>相等向量</strong>
+长度相等且方向相同的向量。相等向量经过平移后总可以重合，即为$\vec a = \vec b$</p>
+</li>
+</ol>
+<h2 id="-">加法</h2>
+<p><img src="../img/b0.jpg" width="300" /></p>
+<p>求两个向量$\vec a,\vec b$的和的运算，叫做向量的加法。 $\vec a + \vec b$叫做$\vec a,\vec b$的和向量。</p>
+<p><strong>两个向量的和任然是一个向量</strong></p>
+<h3 id="-">三角形法则</h3>
+<p><img src="../img/b1.jpg" alt="b1.jpg"></p>
+<p>已知非零向量$\vec a,\vec b$,在平面内任取一点A，做$\vec{AB} = \vec{a},\vec{BC} = \vec{b}$,则向量$\vec{AC}$叫做$\vec a$与$\vec b$的和，记作$\vec a + \vec b$即：</p>
+<p>$$
+\vec a + \vec b = \vec{AB} + \vec{BC} = \vec {AC}
+$$
+这种求和方法，称为<font color="red">向量加法的三角形法则</font></p>
+<h3 id="-vec-a-vec-b-vec-a-vec-b-">$|\vec a + \vec b|$与$|\vec a| + |\vec b| $的大小</h3>
+<p><strong>共线</strong></p>
+<table>
+  <tr>
+    <th>
+    <strong>同向</strong>：
+    </th>
+    <th>
+      反向
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <img src="../img/b2.jpg" width="280" />
+      $$
+      | \vec a + \vec b | = |\vec a| + |\vec b|
+      $$
+    </td>
+    <td>
+      <img src="../img/b3.jpg" width="280" />
+      $$
+      | \vec a + \vec b | = |\vec b| - |\vec a|
+      $$
+    </td>
+  </tr>
+</table>
+
+<p><strong>不共线</strong></p>
+<p><img src="../img/b4.jpg" width="280" /></p>
+<font color="red">三角形的两边和大于第三边</font>
+
+<p>综上得出结论：</p>
+<p>$$
+|\vec a + \vec b| \leq |\vec a| + |\vec b| 
+$$</p>
+<h3 id="-">平行四边形法则</h3>
+<p><img src="../img/b5.jpg" alt="b5.jpg"></p>
+<p>以同一起点的两个已知向量$\vec a,\vec b$为领边作四边形OACB,则以O为起点的对角线$\vec {OC}$就是$\vec a$与$\vec b$ 的和$\vec a+\vec b$，即</p>
+<p>$$
+\vec a + \vec b = \vec{OA} + \vec{OB} = \vec{OC}
+$$
+这种求向量和的方法，称为向量加法的平行四边形法则。</p>
+<font color="red">以同一起点的两个向量为领边作平行四边形，则以公共起点为起点的对角线所对应向量就是和向量</font>
+
+<h3 id="-">向量的加法满足交换律和结合律</h3>
+<p><img src="../img/b6.jpg" alt="b6.jpg"></p>
+<p>$$
+\vec a + \vec b = \vec b + \vec a \\
+(\vec a + \vec b ) + \vec c = \vec a + (\vec b + \vec c)
+$$</p>
+<h2 id="-">减法</h2>
+<h3 id="-">相反向量</h3>
+<p>与$\vec a$长度相等，方向相反的向量，叫做$\vec a$的相反向量。记作$-\vec a$</p>
+<p>$$
+- (-\vec a ) = \vec a \\
+\vec a + ( - \vec a) = (-\vec a) + \vec a = 0 
+$$</p>
+<p>向量$\vec a$加上$\vec b$的相反向量叫做$\vec a$与$\vec b$的差，记作：</p>
+<p>$$
+\vec a - \vec b = \vec a + (-\vec b)
+$$</p>
+<p>求两个向量差的运算，叫做向量的减法</p>
+<p><img src="../img/b7.jpg" alt="b7.jpg"></p>
+<h3 id="-">几何意义</h3>
+<p>$\vec a - \vec b$可以表示为从向量$\vec b$的终点指向向量$\vec a$的终点向量</p>
+<p>注意：</p>
+<ol>
+<li>起点必须相同</li>
+<li>指向被减向量的终点</li>
+</ol>
+<h2 id="-">实数与向量的乘积</h2>
+<p>实数$\lambda$ 与向量$\vec a$的乘积为一个向量，记作$\lambda \vec a$</p>
+<p>规定如下：</p>
+<ol>
+<li><p>$$|\lambda\vec a| = |\lambda|\times|\vec a| $$</p>
+</li>
+<li><p>当$\lambda &gt; 0$时，$\lambda \vec a$的方向与$\vec a$的方向相同；当$\lambda &lt; 0$时，$\lambda \vec a$的方向与$\vec a$的方向相反；当$\lambda = 0$时，方向是任意的。</p>
+</li>
+</ol>
+<h3 id="-">满足交换律、结合律和分配律</h3>
+<p>设$\lambda,\mu$为实数，则</p>
+<p>$$
+\lambda  (\mu  \vec a) = (\lambda \mu)  \vec a \\
+(\lambda + \mu) \vec a = \lambda \vec a + \mu \vec a \\
+\lambda (\vec a + \vec b) = \lambda \vec a + \lambda  \vec b
+$$</p>
+<h3 id="-">共线定理</h3>
+<p>向量$\vec b$与非零向量$\vec a$共线，有且只有一个实数$\lambda$ 使得$\vec b = \lambda \vec a$</p>
+<h3 id="-">平面向量的基本定义</h3>
+<p>如果$\vec{e1},\vec{e2}$是一个平面内的两个不共线的向量。那么对这一平面内的任意向量$\vec a$,有且只有一对实数$\lambda1,\lambda2$，使得：
+$$\vec a = \lambda1 \vec{e1} + \lambda2 \vec{e2}$$
+其中不共线的向量$\vec{e1},\vec{e2}$叫做表示这一平面内所有向量的一组基底</p>
+<p>参考网站：</p>
+<p><a href="https://wenku.baidu.com/view/7ee1870d336c1eb91a375de4.html">https://wenku.baidu.com/view/7ee1870d336c1eb91a375de4.html</a>
+<a href="https://wenku.baidu.com/view/fd6011d87f1922791688e878.html">https://wenku.baidu.com/view/fd6011d87f1922791688e878.html</a></p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
