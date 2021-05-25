@@ -5,6 +5,7 @@ export {Vector} from './Vector/Vector';
 export {Point} from './Geometry/Point';
 export {Circle} from './Geometry/Circle';
 export {Line} from './Geometry/Line';
+export {LinerRing} from './Geometry/LinerRing';
 //Layer
 export {Layer} from './Layer/Layer';
 //Math
