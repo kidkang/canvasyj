@@ -32,6 +32,7 @@ $$
 
 只有一列的矩阵。
 
+
 $$
 \begin{equation}
 \left[\begin{matrix}

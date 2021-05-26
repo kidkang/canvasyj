@@ -46,10 +46,12 @@ class Arrow{
     return new Vector(arrow,this.style);
   }
   getArrowTranslate(){
-    const angle = this.p.sub(this.origin).angle();
+    const p = this.p.clone();
+    const origin = this.origin.clone();
+    const angle = p.sub(origin).angle();
     const scalar = 4;
-    const tx = this.p.x + this.origin.x;
-    const ty = this.p.y + this.origin.y;
+    const tx = p.x + origin.x;
+    const ty = p.y + origin.y;
     const m0 = new Matrix3();
     m0.set(
         Math.cos(angle),-Math.sin(angle),0,
