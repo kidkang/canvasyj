@@ -585,12 +585,15 @@ $$
 
 两个对角矩阵的乘积也是对角矩阵
 
+#### 应用
+
 
 **规律**
 
 1. 结合律 $(AB)C = A(BC)$
-2. 分配率 $A(B+C) = AB + AC OR (B+C)A = BA + CA$
+2. 分配率 $A(B+C) = AB + AC OR \quad (B+C)A = BA + CA$
 3. $\lambda (AB) = (\lambda A)B$
+
 
 
 参考网站：
