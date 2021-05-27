@@ -592,6 +592,12 @@ $$
 2. 分配率 $A(B+C) = AB + AC OR \quad (B+C)A = BA + CA$
 3. $\lambda (AB) = (\lambda A)B$
 
+## 参考网站
+
+[https://baike.baidu.com/item/矩阵行列式/18882017?fr=aladdin](https://baike.baidu.com/item/矩阵行列式/18882017?fr=aladdin)
+[https://lsvih.com/2019/06/26/javascript-linear-algebra-basic-matrix-operations/](https://lsvih.com/2019/06/26/javascript-linear-algebra-basic-matrix-operations/)
+[https://www.docin.com/p-685542032.html](https://www.docin.com/p-685542032.html)
+
 # 矩阵转置
 
 设矩阵A，B，如下：
@@ -873,11 +879,7 @@ z = \frac{D_z}{D} = 1 \\\
 \end{cases}
 $$
 
-## 参考网站
 
-[https://baike.baidu.com/item/矩阵行列式/18882017?fr=aladdin](https://baike.baidu.com/item/矩阵行列式/18882017?fr=aladdin)
-[https://lsvih.com/2019/06/26/javascript-linear-algebra-basic-matrix-operations/](https://lsvih.com/2019/06/26/javascript-linear-algebra-basic-matrix-operations/)
-[https://www.docin.com/p-685542032.html](https://www.docin.com/p-685542032.html)
 
 
 参考网站：
@@ -889,4 +891,5 @@ $$
 [http://dec3.jlu.edu.cn/webcourse/t000022/teach/chapter2/2_1.htm](http://dec3.jlu.edu.cn/webcourse/t000022/teach/chapter2/2_1.htm)
 
 [https://wenku.baidu.com/view/63d7c766700abb68a882fb75?bfetype=new](https://wenku.baidu.com/view/63d7c766700abb68a882fb75?bfetype=new)
+
 
